@@ -189,12 +189,15 @@ body {
   transition: transform 0.25s;
 }
 
+.filter-name {
+  font-size: 20px;
+  text-align: center;
+}
 .filter {
   display: block;
   background-color: rgb(0, 0, 0);
   width: 80%;
   min-height: 53%;
-  margin-top: 3.5em;
   margin-left: 3em;
   color: #fff;
   padding: 25px 25px 30px;
@@ -202,6 +205,14 @@ body {
 
 .filter p {
   padding: 20px 0px;
+}
+
+.filter input {
+  display: none;
+}
+
+.filter label {
+  display: block;
 }
 
 .filter ul {
@@ -214,10 +225,12 @@ body {
   padding: 0px 0px 10px 0px;
 }
 
+/* Скрываем стандартный чекбокс */
 .custom-checkbox input[type="checkbox"] {
-  display: block;
+  display: none;
 }
 
+/* Стиль кастомного чекбокса */
 .custom-checkbox .checkmark {
   position: relative;
   display: inline-block;
@@ -229,32 +242,41 @@ body {
   margin-right: 8px;
 }
 
+/* Галочка для состояния "отмечено" */
 .custom-checkbox input[type="checkbox"]:checked+.checkmark {
   background-color: #f00;
+  /* Цвет фона при включении */
   border-color: #f00;
+  /* Цвет границы при включении */
 }
 
 .custom-checkbox {
   display: flex;
+  /* Используем flexbox для выравнивания по горизонтали */
   align-items: center;
+  /* Выравнивание элементов по центру по вертикали */
   cursor: pointer;
   user-select: none;
 }
 
 .custom-checkbox:hover {
   color: #f00;
+  /* Изменение цвета текста на красный при наведении */
 }
 
 .custom-checkbox input[type="checkbox"]:checked~.text {
   color: #f00;
+  /* Изменение цвета текста на красный при наведении */
 }
 
 .custom-checkbox:after {
   color: #f00;
+  /* Изменение цвета текста на красный при наведении */
 }
 
 .custom-checkbox:hover .checkmark {
   border-color: #f00;
+  /* Изменение цвета границы чекбокса на красный при наведении */
 }
 
 .container,
@@ -285,17 +307,21 @@ body {
 
   .row .first {
     flex-direction: column;
+    /* Переставляем элементы в колонку */
   }
 
   .col-lg-3,
   .col-lg-8 {
     width: 100%;
+    /* Заставляем колонку занимать 100% ширины */
     height: 90%;
   }
 
   .col-lg-3 {
     order: -1;
+    /* Перемещаем левую панель с фильтрами вверх */
     margin-bottom: 20px;
+    /* Добавляем отступ снизу */
   }
 }
 
@@ -337,8 +363,31 @@ footer input[type="checkbox"] {
 }
 
 @media (max-width: 770px) {
-  footer {
+  .filter-group {
+    display: none;
+  }
+  .filter ul {
+    display: none;
+  }
+
+  .filter-name {
+    padding: 0;
     margin: 0;
+  }
+
+  .filter label {
+    cursor: pointer;
+  }
+
+  .filter input:checked ~ p {
+    display: block;
+  }
+  .filter input:checked ~ p ~ ul {
+    display: block;
+  }
+
+  footer {
+    margin-top: 15px;
     padding: 0;
   }
   .group-list {

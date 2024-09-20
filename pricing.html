@@ -48,11 +48,14 @@
 
     <section>
         <div class="container-fluid mt-5">
-
             <div class="row first">
                 <div class="col-lg-3 col-md-3 col-sm-3">
                     <div class="filter">
-                        <p>GPU</p>
+                        <label for="checkbox-filter">
+                            <p class="filter-name">Filter</p>
+                        </label>
+                        <input type="checkbox" id="checkbox-filter">
+                        <p class="filter-group">GPU</p>
                         <ul>
                             <li>
                                 <label class="custom-checkbox">
@@ -74,7 +77,7 @@
                                 </label>
                             </li>
                         </ul>
-                        <p>Motherboard</p>
+                        <p class="filter-group">Motherboard</p>
                         <ul>
                             <li>
                                 <label class="custom-checkbox">
@@ -96,7 +99,7 @@
                                 </label>
                             </li>
                         </ul>
-                        <p>Monitors</p>
+                        <p class="filter-group">Monitors</p>
                         <ul>
                             <li>
                                 <label class="custom-checkbox">
@@ -217,65 +220,80 @@
         </div>
     </section>
 
-    <footer class="mt-5">
+    <footer>
         <div class="container-fluid footer">
-            <div class="row">
-                <div class="col-lg-1 col-md-1 col-sm-1">
+            <div class="row footer">
+                <div class="col-lg-1 col-md-1 col-sm-0">
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-2">
-                    <p>Community</p>
-                    <ul>
-                        <li>MSI Reward Program</li>
-                        <li>Member Center</li>
-                        <li>MSI Insider</li>
-                        <li>Social Media</li>
-                        <li>Forums</li>
-                        <li>ESport Teams</li>
-                    </ul>
+                <div class="col-lg-2 col-md-2 col-sm-12" id="bottom-list">
+                    <label>
+                        <p class="group">Community</p>
+                        <input type="checkbox">
+                        <ul class="group-list">
+                            <li class="member">MSI Reward Program</li>
+                            <li class="member">Member Center</li>
+                            <li class="member">MSI Insider</li>
+                            <li class="member">Social Media</li>
+                            <li class="member">Forums</li>
+                            <li class="member">ESport Teams</li>
+                        </ul>
+                    </label>
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-2">
-                    <p>Support</p>
-                    <ul>
-                        <li>Downloads</li>
-                        <li>Product Registration</li>
-                        <li>Warranty Information</li>
-                        <li>Online Customer Service</li>
-                        <li>Service Location</li>
-                        <li>Where To Buy</li>
-                    </ul>
+                <div class="col-lg-2 col-md-2 col-sm-12" id="bottom-list">
+                        <label>
+                            <p class="group">Support</p>
+                            <input type="checkbox">
+                            <ul class="group-list">
+                                <li class="member">Downloads</li>
+                                <li class="member">Product Registration</li>
+                                <li class="member">Warranty Information</li>
+                                <li class="member">Online Customer Service</li>
+                                <li class="member">Service Location</li>
+                                <li class="member">Where To Buy</li>
+                            </ul>
+                        </label>
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-2">
-                    <p>Resource</p>
-                    <ul>
-                        <li>Press Room</li>
-                        <li>Awards</li>
-                        <li>Videos</li>
-                        <li>RSS</li>
-                        <li>Customer Stories</li>
-                        <li>Blogs</li>
-                    </ul>
+                <div class="col-lg-2 col-md-2 col-sm-12" id="bottom-list">
+                        <label>
+                            <p class="group">Resource</p>
+                            <input type="checkbox">
+                            <ul class="group-list">
+                                <li class="member">Press Room</li>
+                                <li class="member">Awards</li>
+                                <li class="member">Videos</li>
+                                <li class="member">RSS</li>
+                                <li class="member">Customer Stories</li>
+                                <li class="member">Blogs</li>
+                            </ul>
+                        </label>
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-2">
-                    <p>More</p>
-                    <ul>
-                        <li>About MSI</li>
-                        <li>Brand Story</li>
-                        <li>Innovation DNA</li>
-                        <li>CSR</li>
-                        <li>Investor Information</li>
-                        <li>Contact Information</li>
-                    </ul>
+                <div class="col-lg-2 col-md-2 col-sm-12" id="bottom-list">
+                        <label>
+                            <p class="group">More</p>
+                            <input type="checkbox">
+                            <ul class="group-list">
+                                <li class="member">About MSI</li>
+                                <li class="member">Brand Story</li>
+                                <li class="member">Innovation DNA</li>
+                                <li class="member">CSR</li>
+                                <li class="member">Investor Information</li>
+                                <li class="member">Contact Information</li>
+                            </ul>
+                        </label>
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-2">
-                    <p>Company Information</p>
-                    <ul>
-                        <li>Artificial Intelligence</li>
-                        <li>Brochure</li>
-                        <li>Wallpaper</li>
-                        <li>PSU Calculator</li>
-                    </ul>
+                <div class="col-lg-2 col-md-2 col-sm-12" id="bottom-list">
+                        <label>
+                            <p class="group">Company Information</p>
+                            <input type="checkbox">
+                            <ul class="group-list">
+                                <li class="member">Artificial Intelligence</li>
+                                <li class="member">Brochure</li>
+                                <li class="member">Wallpaper</li>
+                                <li class="member">PSU Calculator</li>
+                            </ul>
+                        </label>
                 </div>
-                <div class="col-lg-1 col-md-1 col-sm-1">
+                <div class="col-lg-1 col-md-1 col-sm-0" id="bottom-list">
                 </div>
             </div>
         </div>
