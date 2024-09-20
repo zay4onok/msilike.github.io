@@ -209,12 +209,10 @@
   padding: 0px 0px 10px 0px;
 }
 
-/* Скрываем стандартный чекбокс */
 .custom-checkbox input[type="checkbox"] {
   display: none;
 }
 
-/* Стиль кастомного чекбокса */
 .custom-checkbox .checkmark {
   position: relative;
   display: inline-block;
@@ -226,33 +224,32 @@
   margin-right: 8px;
 }
 
-/* Галочка для состояния "отмечено" */
 .custom-checkbox input[type="checkbox"]:checked + .checkmark {
-  background-color: #f00; /* Цвет фона при включении */
-  border-color: #f00; /* Цвет границы при включении */
+  background-color: #f00;
+  border-color: #f00;
 }
 
 .custom-checkbox {
-  display: flex; /* Используем flexbox для выравнивания по горизонтали */
-  align-items: center; /* Выравнивание элементов по центру по вертикали */
+  display: flex;
+  align-items: center;
   cursor: pointer;
   user-select: none;
 }
 
 .custom-checkbox:hover {
-  color: #f00; /* Изменение цвета текста на красный при наведении */
+  color: #f00;
 }
 
 .custom-checkbox input[type="checkbox"]:checked ~ .text {
-  color: #f00; /* Изменение цвета текста на красный при наведении */
+  color: #f00;
 }
 
 .custom-checkbox:after {
-  color: #f00; /* Изменение цвета текста на красный при наведении */
+  color: #f00;
 }
 
 .custom-checkbox:hover .checkmark {
-  border-color: #f00; /* Изменение цвета границы чекбокса на красный при наведении */
+  border-color: #f00;
 }
 
 .container,
@@ -280,18 +277,18 @@
     margin-top: 0 !important;
   }
   .row .first {
-    flex-direction: column; /* Переставляем элементы в колонку */
+    flex-direction: column;
   }
 
   .col-lg-3,
   .col-lg-8 {
-    width: 100%; /* Заставляем колонку занимать 100% ширины */
+    width: 100%;
     height: 90%;
   }
 
   .col-lg-3 {
-    order: -1; /* Перемещаем левую панель с фильтрами вверх */
-    margin-bottom: 20px; /* Добавляем отступ снизу */
+    order: -1;
+    margin-bottom: 20px;
   }
 }
 
