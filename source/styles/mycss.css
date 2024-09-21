@@ -176,6 +176,10 @@ body {
   color: rgb(255, 255, 255);
 }
 
+.carousel-item img {
+  width: 100%;
+}
+
 .card-title {
   text-align: center;
 }
@@ -192,19 +196,23 @@ body {
 .filter-name {
   font-size: 20px;
   text-align: center;
+  display: none;
 }
+
 .filter {
   display: block;
   background-color: rgb(0, 0, 0);
   width: 80%;
-  min-height: 53%;
+  min-height: 30%;
   margin-left: 3em;
   color: #fff;
   padding: 25px 25px 30px;
+  margin-top: 70px;
 }
 
 .filter p {
   padding: 20px 0px;
+  text-align: center;
 }
 
 .filter input {
@@ -217,20 +225,19 @@ body {
 
 .filter ul {
   list-style: none;
-  font-size: smaller;
-  padding: 0px 0px 0px 30px;
+  font-size:medium;
+  padding: 0;
 }
 
 .filter li {
+  font-size: small;
   padding: 0px 0px 10px 0px;
 }
 
-/* Скрываем стандартный чекбокс */
 .custom-checkbox input[type="checkbox"] {
   display: none;
 }
 
-/* Стиль кастомного чекбокса */
 .custom-checkbox .checkmark {
   position: relative;
   display: inline-block;
@@ -242,41 +249,32 @@ body {
   margin-right: 8px;
 }
 
-/* Галочка для состояния "отмечено" */
 .custom-checkbox input[type="checkbox"]:checked+.checkmark {
   background-color: #f00;
-  /* Цвет фона при включении */
   border-color: #f00;
-  /* Цвет границы при включении */
 }
 
 .custom-checkbox {
   display: flex;
-  /* Используем flexbox для выравнивания по горизонтали */
   align-items: center;
-  /* Выравнивание элементов по центру по вертикали */
   cursor: pointer;
   user-select: none;
 }
 
 .custom-checkbox:hover {
   color: #f00;
-  /* Изменение цвета текста на красный при наведении */
 }
 
 .custom-checkbox input[type="checkbox"]:checked~.text {
   color: #f00;
-  /* Изменение цвета текста на красный при наведении */
 }
 
 .custom-checkbox:after {
   color: #f00;
-  /* Изменение цвета текста на красный при наведении */
 }
 
 .custom-checkbox:hover .checkmark {
   border-color: #f00;
-  /* Изменение цвета границы чекбокса на красный при наведении */
 }
 
 .container,
@@ -295,34 +293,10 @@ body {
   margin-left: 0;
 }
 
-@media (max-width: 1200px) {
-  .filter {
-    width: 100%;
-    margin: 0;
-  }
-
-  .mt-5 {
-    margin-top: 0 !important;
-  }
-
-  .row .first {
-    flex-direction: column;
-    /* Переставляем элементы в колонку */
-  }
-
-  .col-lg-3,
-  .col-lg-8 {
-    width: 100%;
-    /* Заставляем колонку занимать 100% ширины */
-    height: 90%;
-  }
-
-  .col-lg-3 {
-    order: -1;
-    /* Перемещаем левую панель с фильтрами вверх */
-    margin-bottom: 20px;
-    /* Добавляем отступ снизу */
-  }
+.icon-sort {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
 }
 
 footer {
@@ -335,6 +309,7 @@ footer label {
   display: block;
   cursor: pointer;
 }
+
 .group {
   margin: 0;
   padding: 20px 0;
@@ -358,14 +333,43 @@ footer li:hover {
 
 }
 
+.price-footer {
+  margin-top: 2em;
+}
+
 footer input[type="checkbox"] {
   display: none;
 }
 
 @media (max-width: 770px) {
-  .filter-group {
-    display: none;
+  .filter {
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
+
+  .row.section {
+    padding: 0 25px;
+  }
+  .row.first {
+    flex-direction: column;
+  }
+
+  .col-lg-3,
+  .col-lg-8 {
+    width: 100%;
+    height: 90%;
+  }
+
+  .col-lg-3 {
+    order: -1;
+    margin-bottom: 20px;
+  }
+
+  .filter-name {
+    display: block;
+  }
+
   .filter ul {
     display: none;
   }
@@ -379,17 +383,15 @@ footer input[type="checkbox"] {
     cursor: pointer;
   }
 
-  .filter input:checked ~ p {
-    display: block;
-  }
-  .filter input:checked ~ p ~ ul {
+  #checkbox-filter:checked+ul {
     display: block;
   }
 
-  footer {
-    margin-top: 15px;
-    padding: 0;
+  .price-footer {
+    padding: 0 0 20px 0;
+    margin-top: 2em;
   }
+
   .group-list {
     max-height: 0;
     overflow: hidden;
@@ -400,7 +402,11 @@ footer input[type="checkbox"] {
     padding: 15px 0;
   }
 
-  footer input[type="checkbox"]:checked + ul {
+  footer {
+    padding: 0 0 20px 0;
+  }
+
+  footer input[type="checkbox"]:checked+ul {
     max-height: 500px;
   }
 
