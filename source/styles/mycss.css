@@ -3,9 +3,28 @@
   margin: 0;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+  padding-bottom: 0px !important;
+  background-color: #000;
+}
+
+.container-fluid.nav {
+  background-color: #fff;
+}
+
 .bg-dark {
   --bs-bg-opacity: 1;
-  background-color: black !important;
+  background-color: white !important;
 }
 
 .carousel.slide.carousel-2 {
@@ -88,8 +107,8 @@
 }
 
 .btn-secondary {
-  --bs-btn-color: #000000;
-  --bs-btn-bg: rgb(255, 255, 255);
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #1a1a1a;
   --bs-btn-border-color: #6c757d;
   --bs-btn-hover-color: #000000;
   --bs-btn-hover-bg: rgb(255, 0, 0);
@@ -132,10 +151,10 @@
   --bs-dropdown-border-radius: var(--bs-border-radius);
   --bs-dropdown-border-width: var(--bs-border-width);
   --bs-dropdown-inner-border-radius: calc(var(--bs-border-radius) - var(--bs-border-width));
-  --bs-dropdown-divider-bg: var(--bs-border-color-translucent);
+  --bs-dropdown-divider-bg: red;
   --bs-dropdown-divider-margin-y: 0.5rem;
   --bs-dropdown-box-shadow: var(--bs-box-shadow);
-  --bs-dropdown-link-color: var(--bs-body-color);
+  --bs-dropdown-link-color: white;
   --bs-dropdown-link-hover-color: rgb(255, 255, 255);
   --bs-dropdown-link-hover-bg: rgb(255, 0, 0);
   --bs-dropdown-link-active-color: rgb(255, 255, 255);
@@ -156,7 +175,7 @@
   color: var(--bs-dropdown-color);
   text-align: left;
   list-style: none;
-  background-color: var(--bs-dropdown-bg);
+  background-color: #1a1a1a;
   background-clip: padding-box;
   border: var(--bs-dropdown-border-width) solid var(--bs-dropdown-border-color);
   border-radius: var(--bs-dropdown-border-radius);
@@ -182,10 +201,15 @@
   max-height: 300px;
 }
 
+.row.first {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
 .nav-link {
   display: inline-block;
   position: relative;
-  color: #ffffff;
+  color: gray;
   margin-left: 20px;
 }
 
@@ -208,7 +232,7 @@
 }
 
 .nav-link:hover {
-  color: rgb(255, 255, 255);
+  color: gray;
 }
 
 .carousel-item img {
@@ -219,9 +243,26 @@
   text-align: center;
 }
 
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+  padding-bottom: 50px;
+  margin-right: 0;
+  margin-left: 0;
+  background-color: #000;
+}
+
 .card {
+  background-color: #000;
+  color: #fff;
   padding: 15px 25px 35px;
   height: 100%;
+  border-color: #222;
+  border-width: 1px;
+  border-radius: 0;
 }
 
 .card:hover {
@@ -237,7 +278,7 @@
 
 .filter {
   display: block;
-  background-color: rgb(0, 0, 0);
+  background: #1a1a1a;
   width: 80%;
   min-height: 30%;
   margin-left: 3em;
@@ -261,12 +302,154 @@
 .filter ul {
   list-style: none;
   font-size: medium;
-  padding: 0;
+
 }
 
 .filter li {
   font-size: small;
   padding: 0px 0px 10px 0px;
+}
+
+.filter .gpu {
+  border-bottom: 1px solid #222;
+  margin-bottom: 0;
+}
+
+.filter .motherboard {
+  border-bottom: 1px solid #222;
+}
+
+.filter .monitors {
+  border-bottom: 1px solid #222;
+}
+
+.gpu ul {
+  padding-left: 30px;
+}
+
+.motherboard ul {
+  padding-left: 30px;
+}
+
+.monitors ul {
+  padding-left: 30px;
+}
+
+.gpu>ul {
+  max-height: 500px;
+  overflow: hidden;
+  transition: max-height 0.5s linear;
+}
+
+.motherboard>ul {
+  max-height: 500px;
+  overflow: hidden;
+  transition: max-height 0.5s linear;
+}
+
+.monitors>ul {
+  max-height: 500px;
+  overflow: hidden;
+  transition: max-height 0.5s linear;
+}
+
+.label-gpu {
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label-gpu:after {
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  display: inline-block;
+  content: "";
+  border: solid #fff;
+  border-width: 0 3px 3px 0;
+  margin: 0 2px 0 0;
+  padding: 3px;
+  transform: translateY(-50%) rotate(45deg);
+  top: 50%;
+  transition: .3s;
+}
+
+#gpu:checked~ul {
+  max-height: 0px;
+  padding-left: 30px;
+}
+
+#gpu:checked+.label-gpu::after {
+  transform: translateY(-50%) rotate(-135deg);
+}
+
+.label-motherboard {
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label-motherboard:after {
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  display: inline-block;
+  content: "";
+  border: solid #fff;
+  border-width: 0 3px 3px 0;
+  margin: 0 2px 0 0;
+  padding: 3px;
+  transform: translateY(-50%) rotate(45deg);
+  top: 50%;
+  transition: .3s;
+}
+
+#motherboard:checked~ul {
+  max-height: 0px;
+  padding-left: 30px;
+}
+
+#motherboard:checked+.label-motherboard::after {
+  transform: translateY(-50%) rotate(-135deg);
+}
+
+.label-monitors {
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label-monitors:after {
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  display: inline-block;
+  content: "";
+  border: solid #fff;
+  border-width: 0 3px 3px 0;
+  margin: 0 2px 0 0;
+  padding: 3px;
+  transform: translateY(-50%) rotate(45deg);
+  top: 50%;
+  transition: .3s;
+}
+
+#monitors:checked~ul {
+  max-height: 0px;
+  padding-left: 30px;
+}
+
+#monitors:checked+.label-monitors:after {
+  transform: translateY(-50%) rotate(-135deg);
 }
 
 .custom-checkbox input[type="checkbox"] {
@@ -346,16 +529,43 @@
   margin-left: 0;
 }
 
-.icon-sort {
-  width: 15px;
-  height: 15px;
-  margin-right: 5px;
+.pagination {
+  width: 100%;
+  margin-block-start: 20px;
+  margin-block-end: 40px;
 }
 
+.pagination__item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pagination__link {
+  margin-block-start: 15px;
+}
+
+.pagination__link--active button {
+  background: red;
+  border: 1px solid red;
+  color: #fff;
+}
+
+
+
 footer {
-  background-color: black !important;
+  background-color: white !important;
   color: #fff;
   padding: 40px 0 45px;
+}
+
+.container-fluid.footer {
+  background-color: #fff;
+}
+
+.row.footer {
+  background-color: #fff;
+  color: gray;
 }
 
 footer label {
@@ -403,7 +613,6 @@ footer input[type="checkbox"] {
   .navbar-nav {
     --bs-nav-link-padding-x: 0;
     --bs-nav-link-padding-y: 0.5rem;
-    --bs-nav-link-font-weight: ;
     --bs-nav-link-color: var(--bs-navbar-color);
     --bs-nav-link-hover-color: var(--bs-navbar-hover-color);
     --bs-nav-link-disabled-color: var(--bs-navbar-disabled-color);
@@ -444,15 +653,15 @@ footer input[type="checkbox"] {
   }
 
   .filter .gpu {
-    border-bottom: 1px solid #ececec;
+    border-bottom: 1px solid #222;
   }
 
   .filter .motherboard {
-    border-bottom: 1px solid #ececec;
+    border-bottom: 1px solid #222;
   }
 
   .filter .monitors {
-    border-bottom: 1px solid #ececec;
+    border-bottom: 1px solid #222;
   }
 
   .filter-name {
@@ -636,11 +845,12 @@ footer input[type="checkbox"] {
     right: 0;
     width: 12px;
     height: 2px;
-    background: #fff;
+    background: gray;
     border-radius: 5px;
     transform: translateY(10px) rotate(90deg);
     transition: transform .3s;
   }
+
   .group::before {
     pointer-events: none;
     display: inline-block;
@@ -650,7 +860,7 @@ footer input[type="checkbox"] {
     right: 0;
     width: 12px;
     height: 2px;
-    background: #fff;
+    background: gray;
     border-radius: 5px;
     transform: translateY(10px) rotate(0);
     transition: transform .3s;
@@ -679,6 +889,6 @@ footer input[type="checkbox"] {
   }
 
   #bottom-list {
-    border-bottom: 1px solid #ececec;
+    border-bottom: 1px solid #222;
   }
 }
