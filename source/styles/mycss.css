@@ -8,6 +8,10 @@ ul {
   padding: 0;
 }
 
+.row {
+  margin-right: 0;
+}
+
 p {
   margin-top: 0;
   margin-bottom: 0;
