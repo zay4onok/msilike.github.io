@@ -112,12 +112,14 @@
         </div>
         <div class="container-fluid mt-3">
             <div class="row first">
+
                 <div class="col-lg-3 col-md-3 col-sm-3" id="advenced_search">
                     <div class="filter">
+                        <input type="checkbox" id="checkbox-filter">
                         <label for="checkbox-filter">
                             <p class="filter-name">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="19" height="16" viewBox="0 0 19 16"
-                                    stroke="#f00" style="margin: 0px 5px 4px 0px;">
+                                    stroke="#ececec" style="margin: 0px 5px 4px 0px;">
                                     <g id="Group_33" data-name="Group 33" transform="translate(-1651 -352)">
                                         <g id="Group_24" data-name="Group 24" transform="translate(1651 352)">
                                             <path id="Path_1" data-name="Path 1"
@@ -139,77 +141,95 @@
                                 ADVANCED SEARCH
                             </p>
                         </label>
-                        <input type="checkbox" id="checkbox-filter">
                         <ul>
-                            <p class="filter-group">GPU</p>
-                            <ul>
-                                <li>
-                                    <label class="custom-checkbox">
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                        <span class="text">MSI RTX 1660 SUPER</span>
-                                    </label>
-                                </li>
-                                <li><label class="custom-checkbox">
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                        <span class="text">MSI RTX 2060 SUPER</span>
-                                    </label>
-                                </li>
-                                <li><label class="custom-checkbox">
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                        <span class="text">MSI RTX 3060ti</span>
-                                    </label>
-                                </li>
-                            </ul>
-                            <p class="filter-group">Motherboard</p>
-                            <ul>
-                                <li>
-                                    <label class="custom-checkbox">
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                        <span class="text">MSI B450M-A</span>
-                                    </label>
-                                </li>
-                                <li><label class="custom-checkbox">
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                        <span class="text">MSI MPG B550</span>
-                                    </label>
-                                </li>
-                                <li><label class="custom-checkbox">
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                        <span class="text">MSI Pro Z790</span>
-                                    </label>
-                                </li>
-                            </ul>
-                            <p class="filter-group">Monitors</p>
-                            <ul>
-                                <li>
-                                    <label class="custom-checkbox">
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                        <span class="text">27" MSI MAG 274QRF-QD</span>
-                                    </label>
-                                </li>
-                                <li><label class="custom-checkbox">
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                        <span class="text">27 MSI Optix G27CQ4</span>
-                                    </label>
-                                </li>
-                                <li><label class="custom-checkbox">
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                        <span class="text">27 MSI Professional PRO</span>
-                                    </label>
-                                </li>
-                            </ul>
+                            <div class="gpu">
+                                <input type="checkbox" id="gpu">
+                                <label class="label-gpu" for="gpu">
+                                    <p class="filter-group">GPU</p>
+                                </label>
+                                <ul>
+                                    <li>
+                                        <label class="custom-checkbox">
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                            <span class="text">MSI RTX 1660 SUPER</span>
+                                        </label>
+                                    </li>
+                                    <li><label class="custom-checkbox">
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                            <span class="text">MSI RTX 2060 SUPER</span>
+                                        </label>
+                                    </li>
+                                    <li><label class="custom-checkbox">
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                            <span class="text">MSI RTX 3060ti</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="motherboard">
+                                <input type="checkbox" id="motherboard">
+                                <label for="motherboard" class="label-motherboard">
+                                    <p class="filter-group">Motherboard</p>
+                                </label>
+                                <ul>
+                                    <li>
+                                        <label class="custom-checkbox">
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                            <span class="text">MSI B450M-A</span>
+                                        </label>
+                                    </li>
+                                    <li><label class="custom-checkbox">
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                            <span class="text">MSI MPG B550</span>
+                                        </label>
+                                    </li>
+                                    <li><label class="custom-checkbox">
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                            <span class="text">MSI Pro Z790</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="monitors">
+                                <input type="checkbox" id="monitors">
+                                <label for="monitors" class="label-monitors">
+                                    <p class="filter-group">Monitors</p>
+                                </label>
+                                <ul>
+                                    <li>
+                                        <label class="custom-checkbox">
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                            <span class="text">27" MSI MAG 274QRF-QD</span>
+                                        </label>
+                                    </li>
+                                    <li><label class="custom-checkbox">
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                            <span class="text">27 MSI Optix G27CQ4</span>
+                                        </label>
+                                    </li>
+                                    <li><label class="custom-checkbox">
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                            <span class="text">27 MSI Professional PRO</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <button type="reset" class="filter-reset">
+                                RESET
+                            </button>
                         </ul>
                     </div>
                 </div>
+
                 <div class="col-lg-8 col-md-8 col-sm-8">
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
@@ -381,7 +401,7 @@
                         <li class="member">PSU Calculator</li>
                     </ul>
                 </div>
-                <div class="col-lg-1" id="bottom-list">
+                <div class="col-lg-1">
                 </div>
             </div>
         </div>
